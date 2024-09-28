@@ -1,0 +1,223 @@
+/* Estilos gerais */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #000000;  /* Fundo preto */
+  color: #FFFFFF;  /* Texto branco */
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center;     /* Centraliza verticalmente */
+}
+/* Centralização e ajuste dos títulos */
+h1 {
+  text-align: center;
+  font-size: 22px;
+  color: white;
+  /* margin-bottom: -4px; */
+  /* letter-spacing: 9px; */
+  /* text-transform: uppercase; */
+}
+
+/* Estilo do botão "+" para adicionar tarefa */
+.add-task {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  text-align: center;
+}
+
+.add-button {
+  background-color: #BC6FF1;
+  color: #FFFFFF;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+  transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.add-button:hover {
+  width: 200px;
+  background-color: #892CDC;
+  font-size: 1.2em;
+}
+
+.add-button::after {
+  content: "Adicionar Tarefa";
+  margin-left: 10px;
+  font-size: 0;
+  opacity: 0;
+  transition: font-size 0.3s ease, opacity 0.3s ease;
+}
+
+.add-button:hover::after {
+  font-size: 1em;
+  opacity: 1;
+}
+
+/* Painel centralizado e limpo */
+.task-lists {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  width: 100%;
+  margin: 20px auto;
+}
+
+/* Colunas separadas para Pendente e Concluído */
+.task-column {
+  width: 48%;
+  padding: 20px;
+  background-color: #52057B;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  margin: 1rem;
+  border-radius: 3rem;
+}
+
+h2 {
+  font-size: 1.3em;
+  color: black;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+/* Lista de Tarefas */
+.task-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+}
+
+/* As caixas de tarefa */
+.task-item {
+  background-color: #892CDC;
+  border-radius: 2rwm;
+  padding: 15px;
+  color: black;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* .task-item:hover {
+  background-color: #BC6FF1;
+} */
+
+/* Layout dos botões */
+.task-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+
+}
+input[type="text"] {
+  max-width: 90%;
+  color: black;
+}
+textarea {
+  max-width: 90%;
+}
+
+a, button {
+  text-decoration: none;
+  color: #FFFFFF;
+  background-color: #52057B;
+  padding: 7px 10px;
+  border-radius: 5px;
+  font-size: 0.9em;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+a:hover, button:hover {
+  background-color: #BC6FF1;
+}
+
+/* Estilo centralizado dos formulários de adicionar e editar */
+form.task-item {
+  background-color: #892CDC;
+  border-radius: 8px;
+  /* padding: 64px; */
+  color: #FFFFFF;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  max-width: 500px;
+  margin: 60px auto;
+}
+
+.task-title input, .task-description textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  margin-bottom: 15px;
+  font-size: 1em;
+  background-color: #52057B;
+  color: #FFFFFF;
+}
+
+.task-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+label {
+  font-size: 1.2em;
+  color: black;
+  margin: 10px;
+}
+
+select {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #52057B;
+  color: #FFFFFF;
+}
+
+button.save-button {
+  /* background-color: #BC6FF1; */
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  color: #FFFFFF;
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 1rem;
+}
+
+
+/* button.save-button:hover {
+  background-color: #892CDC;
+} */
+
+/* Responsividade */
+@media (max-width: 768px) {
+  form.task-item {
+    max-width: 90%;  /* Ajustando a largura para telas menores */
+  }
+
+  .task-lists {
+    flex-direction: column;
+  }
+
+  .task-column {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .add-button {
+    right: 50%;
+    transform: translateX(50%);
+  }
+}

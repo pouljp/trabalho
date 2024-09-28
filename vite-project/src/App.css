@@ -1,0 +1,165 @@
+/* Estilos gerais */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #000000;  /* Fundo preto */
+  color: #FFFFFF;  /* Texto branco */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.5em;
+  color: #BC6FF1;  /* Título principal com um tom claro da paleta */
+  margin-top: 20px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* Layout para as listas de tarefas */
+.task-lists {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  width: 100%;
+  margin: 20px auto;
+}
+
+/* Colunas para tarefas pendentes e concluídas */
+.task-column {
+  width: 48%;
+  padding: 20px;
+  background-color: #52057B;  /* Fundo roxo escuro */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+  position: relative;
+}
+
+.task-column:hover {
+  transform: translateY(-5px);
+}
+
+.task-column h2 {
+  text-align: center;
+  font-size: 1.5em;
+  color: #BC6FF1;  /* Título das colunas com tom mais claro */
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+/* Estilos da lista de tarefas (inicialmente escondida) */
+.task-list {
+  display: none;
+  transition: all 0.3s ease;
+}
+
+.task-column:hover .task-list {
+  display: block;  /* Mostra a lista ao passar o mouse */
+}
+
+.task-list li {
+  background-color: #892CDC;  /* Fundo da tarefa com tom mais escuro */
+  border-radius: 8px;
+  margin-bottom: 10px;
+  padding: 15px;
+  transition: background-color 0.3s ease;
+  color: #FFFFFF;
+  border-left: 5px solid #52057B;  /* Detalhe de borda */
+  cursor: pointer;
+}
+
+.task-list li:hover {
+  background-color: #BC6FF1;  /* Efeito hover mais claro */
+}
+
+/* Detalhes da tarefa (inicialmente oculto) */
+.task-details {
+  display: none;
+}
+
+.task-list li.clicked .task-details {
+  display: block;  /* Mostra a descrição e botões ao clicar */
+  margin-top: 10px;
+}
+
+/* Links e botões */
+a, button {
+  text-decoration: none;
+  color: #FFFFFF;
+  background-color: #52057B;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 1em;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+a:hover, button:hover {
+  background-color: #BC6FF1;  /* Cor mais clara ao passar o mouse */
+}
+
+/* Input e Select Estilizados */
+input[type="text"], select {
+  background-color: #892CDC;
+  color: #FFFFFF;
+  padding: 10px;
+  border: 1px solid #BC6FF1;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 1em;
+  transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus, select:focus {
+  border-color: #BC6FF1;
+  outline: none;
+}
+
+/* Formulários */
+form {
+  background-color: #52057B;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 500px;
+  margin: 20px auto;
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background-color: #BC6FF1;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #892CDC;
+}
+
+/* Adaptação para Dispositivos Móveis */
+@media (max-width: 768px) {
+  .task-lists {
+    flex-direction: column;
+  }
+
+  .task-column {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
